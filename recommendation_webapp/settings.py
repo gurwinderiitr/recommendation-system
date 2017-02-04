@@ -51,10 +51,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'recommendation_webapp.urls'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+LOGIN_REDIRECT_URL = '/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
