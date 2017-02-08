@@ -22,12 +22,12 @@ class RegistrationForm(forms.Form):
         ('11','Electronics and Communication Engineering'),('12','Humanities and Social Sciences'),('13','Hydrology'),('14','Management Studies'),('15','Mathematics'),('16','Mechanical and Industrial Engineering'),('17','Metallurgical and Materials Engineering'),('18','Paper Technology'),('19','Polymer and Process Engineering'),
         ('20','Physics'),('21','Water Resources Development and Management'),
     )
-    name = forms.RegexField(regex=r'^\w+$', widget=forms.TextInput(attrs={'max_length': 30, 'required': True, 'class': 'form-control', 'name': 'name'}),label=_("Name"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })
+    name = forms.CharField(widget=forms.TextInput(attrs={'max_length': 60, 'required': True, 'class': 'form-control', 'name': 'name'}),label=_("Name"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })
     enrollment = forms.IntegerField(widget=forms.NumberInput(attrs={'max_length': 30, 'required': True, 'class': 'form-control', 'name': 'enrollment'}), label=_("Enrollment No."))
     semester = forms.ChoiceField(choices = semester_choices, required=True, widget=forms.Select(attrs={'class':'form-control'}))
     branch = forms.ChoiceField(choices = branch_choices, required=True, widget=forms.Select(attrs={'class':'form-control'}))
-    username = forms.RegexField(regex=r'^\w+$', widget=forms.TextInput(attrs={'max_length': 30, 'required': True, 'class': 'form-control', 'name': 'username'}), label=_("Username"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })
-    email = forms.EmailField(widget=forms.TextInput(attrs={'max_length': 30, 'required': True, 'class': 'form-control', 'name': 'email'}), label=_("Email address"))
+    username = forms.CharField(widget=forms.TextInput(attrs={'max_length': 30, 'required': True, 'class': 'form-control', 'name': 'username'}), label=_("Username"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })
+    email = forms.EmailField(widget=forms.TextInput(attrs={'type':'email', 'max_length': 30, 'required': True, 'class': 'form-control', 'name': 'email'}), label=_("Email address"))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'max_length': 30,'min_length' :8, 'render_value': False, 'required': True, 'class': 'form-control', 'name': 'password'}), label=_("Password"))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={'max_length': 30,'min_length' :8, 'render_value': False, 'required': True, 'class': 'form-control', 'name': 'password'}), label=_("Password (again)"))
 
