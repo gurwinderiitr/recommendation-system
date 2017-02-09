@@ -13,8 +13,8 @@ from django.template import RequestContext
 from django.shortcuts import render
 
 # Create your views here.
-# this login required decorator is to not allow to any  
-# view without authenticating
+# Added a new login view
+# Not allowed to view without authenticating
 
 @csrf_protect
 def loginview(request):
