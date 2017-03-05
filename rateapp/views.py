@@ -69,5 +69,10 @@ def home(request):
 	return render(request,"home.html")
 
 @login_required(login_url="login/")
+@csrf_protect
 def rate(request):
-	return render(request,"rate.html")
+	if request.method == 'POST':
+		print request.POST
+	context = {}
+	# context['errors'] = loginerror
+	return render( request, 'rate.html', context)

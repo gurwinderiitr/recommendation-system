@@ -27,8 +27,17 @@ $(document).ready(function() {
 
     $('[data-toggle="tooltip"]').tooltip();
 
-    $('button').click(function(e) {
-        e.preventDefault();
-        alert("This is a demo.\n :-)");
-    });
+    // $('button').click(function(e) {
+    //     e.preventDefault();
+    //     alert("This is a demo.\n :-)");
+    // });
+
+    function submitratingform(){
+        pageforms = $('form');
+        for (var i = pageforms.length - 1; i >= 0; i--) {
+            tform = pageforms[i];
+            tform.submit();
+        }
+    }
+
 });

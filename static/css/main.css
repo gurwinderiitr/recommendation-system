@@ -73,9 +73,50 @@
 
 
 
+/*--stars.html--*/
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: roboto;
+}
+
+body {  }
+
+.cont {
+  width: 93%;
+  max-width: 350px;
+  text-align: center;
+  margin: 4% auto;
+  padding: 30px 0;
+  background: #111;
+  color: #EEE;
+  border-radius: 5px;
+  border: thin solid #444;
+  overflow: hidden;
+}
+
+hr {
+  margin: 20px;
+  border: none;
+  border-bottom: thin solid rgba(255,255,255,.1);
+}
+
+div.title { font-size: 2em; }
+
+h1 span {
+  font-weight: 300;
+  color: #Fd4;
+}
+
 div.stars {
   width: 270px;
   display: inline-block;
+  background-color: #111;
 }
 
 input.star { display: none; }
